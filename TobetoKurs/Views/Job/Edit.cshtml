@@ -1,0 +1,41 @@
+﻿@model Job
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Create</h1>
+
+<div class="row">
+    <div class="col">
+        <form method="post" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Summary">Summary</label>
+                <input asp-for="Summary" class="form-control" placeholder="job summary" />
+                <span asp-validation-for="Summary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description">Description</label>
+                <textarea asp-for="Description" rows="2" class="form-control" placeholder="job description"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsCompleted" class="form-check-label">Completed</label>
+                <input asp-for="IsCompleted" class="form-check-input" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Assignee">Assignee</label>
+                <select asp-for="Assignee" class="form-control">
+                    <option value="">Seçiniz</option>
+                    <option value="John Doe">John Doe</option>
+                    <option value="Jack Red">Jack Red</option>
+                    <option value="Mike White">Mike White</option>
+                </select>
+                <span asp-validation-for="Assignee" class="text-danger"></span>
+            </div>
+            <div class="form-group text-right">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

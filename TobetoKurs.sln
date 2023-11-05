@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TobetoKurs", "TobetoKurs\TobetoKurs.csproj", "{FC87A882-9B6F-486D-995C-77B6D5A6885E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC87A882-9B6F-486D-995C-77B6D5A6885E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC87A882-9B6F-486D-995C-77B6D5A6885E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC87A882-9B6F-486D-995C-77B6D5A6885E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC87A882-9B6F-486D-995C-77B6D5A6885E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {315FE7B7-17CA-4919-9FD5-3AAD5D7E68AF}
+	EndGlobalSection
+EndGlobal

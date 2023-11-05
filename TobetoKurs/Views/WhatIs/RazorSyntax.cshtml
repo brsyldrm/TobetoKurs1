@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "RazorSyntax";
+}
+
+<h1>RazorSyntax</h1>
+
+<hr/>
+<h1>Inlıne Expression</h1>
+<div>Tarih : @DateTime.Now.ToString()</div>
+
+@{
+    //Multi Statement Code Block
+    string date = DateTime.Now.ToShortDateString();
+    string message = "Merhaba AspNet MVC Core";
+}
+<div>
+    <div>Bugünün Tarihi : @date</div>
+    <div>Mesaj : @message</div>
+</div>
+
+<div>
+    <h5>Display Text from Code Block</h5>
+    @{
+        string date2 = DateTime.Now.ToShortDateString();
+        string message2 = "Hello World";
+        @:Mesajım şudur : @message2 <br/>
+        @:Tarih : @date2
+    }
+</div>
+
+<div>
+    <h5>Display Text from Code Block</h5>
+    @{
+        string date3 = DateTime.Now.ToShortDateString();
+        string message3 = "Hello World";
+        <text>Mesajım şudur :</text> @message2 <br />
+        <text>Tarih :</text> @date2
+    }
+</div>
+
+<div>
+    <h5>If Else Condition</h5>
+    @if (DateTime.IsLeapYear(DateTime.Now.Year))
+    {
+        @DateTime.Now.Year @: yılı bir artık yıldır.
+    }
+    else
+    {
+        @DateTime.Now.Year @: yılı bir artık yıl değildir.
+    }
+</div>
+
+<div>
+    <h5>For Loops</h5>
+    <ul>
+        <div>
+            @for (int i = 0; i < 10; i++)
+            {
+                <li>@i+1</li>
+            }
+        </div>
+    </ul>
+    
+</div>

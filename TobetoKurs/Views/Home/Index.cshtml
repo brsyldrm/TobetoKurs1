@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@section Styles{
+    <style>
+        #btn{
+            color:yellow;
+        }
+    </style>
+    }
+@section Menu{
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Student" asp-action="Details">Student</a>
+    </li>
+    }
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <button class="btn btn-primary" id="btn" onclick="btn_click()">Bana Tıkla!</button>
+</div>
+@Html.Partial("_AlertBox")
+
+@section Scripts{
+    <script>
+        function btn_click() {
+            alert($("#btn").text());
+        }
+    </script>
+    }

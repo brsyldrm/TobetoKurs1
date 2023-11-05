@@ -1,0 +1,43 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Student Details</h1>
+
+<div>
+    <div>
+        @Html.LabelFor(m=>m.Adi,"Adı : ")
+        @Html.TextBoxFor(m =>m.Adi,new{@class="form-control",placeholder="student name"})
+
+        <label asp-for="Adi">Adı : </label>
+        <input asp-for="Adi" class="form-control" placeholder="student name" />
+    </div>
+    <div>
+        <label asp-for="Soyadi">Soyadı : </label>
+        <input asp-for="Soyadi" class="form-control" placeholder="student surname" />
+    </div>
+    <div>
+        <label asp-for="Yas">Yaş : </label>
+        <input asp-for="Yas" type="number" class="form-control" placeholder="18" />
+    </div>
+    <div>
+        @{
+            List<string> bursVerileri = new List<string> { "Burslu", "Yarı Burslu", "Burssuz" };
+        }
+        <label asp-for="YeniKayitMi">Burslu mu : </label>
+        <select asp-for="YeniKayitMi" asp-items="@(new SelectList(bursVerileri))" class="form-control">
+        </select>
+    </div>
+    <div>
+        <label asp-for="Sifre">Şifre : </label>
+        <input asp-for="Sifre" type="password" class="form-control" />
+    </div>
+    <div>
+        <a href="/Home/Index">Ana Sayfaya dön</a>
+        @Html.ActionLink("Ana sayfaya dön","Index","Home")
+        <a asp-action="Save" class="btn btn-primary">Kaydet</a>
+        <a asp-action="Index" asp-controller="Home" target="_blank" class="btn btn-secondary">Ana Sayfaya dön</a>
+    </div>
+</div>
+

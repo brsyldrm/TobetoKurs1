@@ -1,0 +1,46 @@
+﻿@model Job
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div class="row">
+    <div class="col-2">
+        <b>Name</b>
+    </div>
+    <div class="col-10">
+        <b>@Model.Summary</b>
+    </div>
+</div>
+<div class="row">
+    <div class="col-2">
+        <b>Açıklama</b>
+    </div>
+    <div class="col-10">
+        <b>@Model.Description</b>
+    </div>
+</div>
+<div class="row">
+    <div class="col-2">
+        <b>Assigne</b>
+    </div>
+    <div class="col-10">
+        <b>@Model.Assignee</b>
+    </div>
+</div>
+<div class="row">
+    <div class="col-2">
+        <b>Complete</b>
+    </div>
+    <div class="col-10">
+        <b>@(Model.IsCompleted?"Evet":"Hayır")</b>
+    </div>
+</div>
+<div class="row">
+    <div class="offset-2 col-10">
+        <a asp-action="Index">Return List</a>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Düzenle</a>
+        <a asp-action="Delete" asp-route-id="@Model.Id">Sil</a>
+    </div>
+</div>

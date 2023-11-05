@@ -1,0 +1,42 @@
+﻿@model List<Job>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Jobs</h1>
+
+<div class="row mb-3 text-right">
+    <div class="col">
+        <a asp-action="Create" class="btn btn-primary">Create</a>
+    </div>
+</div>
+
+<div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Summary</th>
+                <th>Description</th>
+                <th>Completed</th>
+                <th>Assignee</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(Job job in Model)
+            {
+                <tr>
+                    <td>@job.Summary</td>
+                    <td>@job.Description</td>
+                    <td>@(job.IsCompleted?"Evet":"Hayır")</td>
+                    <td>@job.Assignee</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@job.Id">Details</a>
+                        <a asp-action="Edit" asp-route-id="@job.Id">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@job.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

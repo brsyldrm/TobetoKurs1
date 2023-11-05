@@ -1,0 +1,63 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "HtmlHelpers";
+}
+
+<h1>HtmlHelpers</h1>
+
+<div>
+    <div>
+        @Html.ActionLink("Ana Sayfaya Git!","Index","Home",null,new{@class="btn btn-primary"})
+    </div>
+    <div>
+        <input type="text" placeholder="adınız" value="John" />
+        @Html.TextBox("name",null,new{placeholder ="adınızı yazınız",@class="form-control"})
+        @Html.TextBoxFor(m=>m.Adi,new{placeholder="öğrenci adını yazınız", @class= "form-control"})
+    </div>
+    <div>
+        @Html.TextArea("aciklama","buraya açıklama giriniz",new{@class="form-control",rows="4"})
+    </div>
+    <div>
+        @Html.CheckBox("secim",true)
+    </div>
+    <div>
+        @Html.RadioButton("renk",null,false)
+        @Html.RadioButton("renk",null,true)
+        @Html.RadioButton("renk",null,false)
+    </div>
+    <div>
+        @{
+            List<SelectListItem> dropdownList = new List<SelectListItem>
+        {
+        new SelectListItem("Mavi","Blue"),
+        new SelectListItem("Yeşil","Green"),
+        new SelectListItem("Sarı","Yellow"),
+        new SelectListItem("Kırmızı","Red")
+        };
+        }
+    </div>
+
+    <div>
+        @Html.DropDownList("renkler",dropdownList,"Seçiniz",new{@class="form-control"})
+    </div>
+    <div>
+        @Html.ListBox("renkler2",dropdownList,new{@class="form-control"})
+    </div>
+    <div>
+        @Html.Password("sifre","123456",new{@class="form-control"})
+    </div>
+    <div>
+        @Html.Label("etiket","Adınız :")
+        @Html.TextBox("txtName",null,new{placeholder ="adınızı yazınız",@class="form-control"})
+    </div>
+    <div>
+        @Html.Display("Adi")
+    </div>
+    <div>
+        @Html.Hidden("gizli","bu gizli bir veridir.")
+    </div>
+    <div>
+        @Html.Raw("<b>bu metin önemlidir</b>")
+    </div>
+</div>
+

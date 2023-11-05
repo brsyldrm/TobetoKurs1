@@ -1,0 +1,24 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Student Details</h1>
+
+<div>
+    <div>Adı : @Model.Adi</div>
+    <div>Soyadı : @Model.Soyadi</div>
+    <div>Yaş : @Model.Yas</div>
+    <div>Yeni Kayıt: @((Model.YeniKayitMi)?"Evet":"Hayır")
+        @* @if (Model.YeniKayitMi)
+        {
+            @:Evet
+        }
+        else
+        {
+            @:Hayır
+        } *@
+    </div>
+    <div>Şifre : @Model.Sifre</div>
+</div>
+
